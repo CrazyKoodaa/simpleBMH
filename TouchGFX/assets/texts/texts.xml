@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.21.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_68WD" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_RFTF" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; km</Translation>
+      </Text>
+      <Text Id="textAreaRightValueWildcard" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">142</Translation>
+      </Text>
+      <Text Id="textAreaMiddleValueWildcard" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">25</Translation>
+      </Text>
+      <Text Id="__SingleUse_050I" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; %</Translation>
+      </Text>
+      <Text Id="textAreaLeftValueWildcard" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">20</Translation>
+      </Text>
+      <Text Id="__SingleUse_5G7R" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; %</Translation>
+      </Text>
+      <Text Id="textAreaRightWildcard" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Reichweite</Translation>
+      </Text>
+      <Text Id="__SingleUse_1UUH" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="textAreaLeftWildcard" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Batterie</Translation>
+      </Text>
+      <Text Id="__SingleUse_Y98A" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="textAreaMiddleWildcard" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Tank</Translation>
+      </Text>
+      <Text Id="__SingleUse_2CU8" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_YY5C" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Status</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0x00-0xFF" WildcardCharacterRanges="0x00-0xFF" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0x00-0xFF" WildcardCharacterRanges="0x00-0xFF" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0x00-0xFF" WildcardCharacterRanges="0x00-0xFF" />
+  </Typographies>
+</TextDatabase>
