@@ -26,11 +26,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "../Components/otm8009a/otm8009a.h"
+#include "otm8009a.h"
 #include "stm32469i_discovery_sdram.h"
 #include "stm32469i_discovery_qspi.h"
 
 #include "utils.h"
+#include "taskSensor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -157,7 +158,7 @@ static void MX_USART3_UART_Init(void);
 void StartTaskTank(void *argument);
 extern void TouchGFX_Task(void *argument);
 void StartTaskFC(void *argument);
-void StartTaskSensor(void *argument);
+//void StartTaskSensor(void *argument);
 void StartTaskSwitches(void *argument);
 void StartTaskI2C(void *argument);
 
@@ -1193,23 +1194,23 @@ void StartTaskFC(void *argument)
   /* USER CODE END StartTaskFC */
 }
 
-/* USER CODE BEGIN Header_StartTaskSensor */
-/**
-* @brief Function implementing the myTaskSensor thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartTaskSensor */
-void StartTaskSensor(void *argument)
-{
-  /* USER CODE BEGIN StartTaskSensor */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END StartTaskSensor */
-}
+///* USER CODE BEGIN Header_StartTaskSensor */
+///**
+//* @brief Function implementing the myTaskSensor thread.
+//* @param argument: Not used
+//* @retval None
+//*/
+///* USER CODE END Header_StartTaskSensor */
+//void StartTaskSensor(void *argument)
+//{
+//  /* USER CODE BEGIN StartTaskSensor */
+//  /* Infinite loop */
+//  for(;;)
+//  {
+//    osDelay(1);
+//  }
+//  /* USER CODE END StartTaskSensor */
+//}
 
 /* USER CODE BEGIN Header_StartTaskSwitches */
 /**

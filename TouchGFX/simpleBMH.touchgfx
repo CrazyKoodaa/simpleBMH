@@ -9,9 +9,18 @@
             "Name": "imageBG",
             "Width": 800,
             "Height": 480,
-            "LockPosition": true,
+            "Visible": false,
             "Filename": "A0001.png",
             "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Video",
+            "Name": "video1",
+            "Width": 800,
+            "Height": 480,
+            "VideoFileName": "output.avi",
+            "AutoPlay": true,
+            "Loop": true
           },
           {
             "Type": "Gauge",

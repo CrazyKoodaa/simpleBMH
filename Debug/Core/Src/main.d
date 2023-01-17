@@ -66,11 +66,13 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/LibJPEG/include/jpeglib.h \
  ../LIBJPEG/Target/jconfig.h ../LIBJPEG/Target/jdata_conf.h \
  ../LIBJPEG/Target/jmorecfg.h ../TouchGFX/App/app_touchgfx.h \
- c:\shared\projekte\programmieren\!github\stm_touchprojects\tests\simplebmh\drivers\bsp\components\otm8009a\otm8009a.h \
+ C:/shared/Projekte/Programmieren/!github/STM_TouchProjects/Tests/simpleBMH/Drivers/BSP/Components/otm8009a/otm8009a.h \
  C:/shared/Projekte/Programmieren/!github/STM_TouchProjects/Tests/simpleBMH/Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_sdram.h \
  C:/shared/Projekte/Programmieren/!github/STM_TouchProjects/Tests/simpleBMH/Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_qspi.h \
  c:\shared\projekte\programmieren\!github\stm_touchprojects\tests\simplebmh\drivers\bsp\components\n25q128a\n25q128a.h \
- ../Core/Inc/utils.h
+ ../Core/Inc/utils.h ../Core/Inc/main.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
+ ../Core/Inc/taskSensor.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -145,8 +147,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../LIBJPEG/Target/jdata_conf.h:
 ../LIBJPEG/Target/jmorecfg.h:
 ../TouchGFX/App/app_touchgfx.h:
-c:\shared\projekte\programmieren\!github\stm_touchprojects\tests\simplebmh\drivers\bsp\components\otm8009a\otm8009a.h:
+C:/shared/Projekte/Programmieren/!github/STM_TouchProjects/Tests/simpleBMH/Drivers/BSP/Components/otm8009a/otm8009a.h:
 C:/shared/Projekte/Programmieren/!github/STM_TouchProjects/Tests/simpleBMH/Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_sdram.h:
 C:/shared/Projekte/Programmieren/!github/STM_TouchProjects/Tests/simpleBMH/Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_qspi.h:
 c:\shared\projekte\programmieren\!github\stm_touchprojects\tests\simplebmh\drivers\bsp\components\n25q128a\n25q128a.h:
 ../Core/Inc/utils.h:
+../Core/Inc/main.h:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
+../Core/Inc/taskSensor.h:

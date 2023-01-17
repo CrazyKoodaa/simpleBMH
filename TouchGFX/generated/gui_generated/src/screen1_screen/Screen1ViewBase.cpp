@@ -4,6 +4,7 @@
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <videos/VideoDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
 Screen1ViewBase::Screen1ViewBase() :
@@ -14,10 +15,16 @@ Screen1ViewBase::Screen1ViewBase() :
     add(__background);
 
     imageBG.setBitmap(touchgfx::Bitmap(BITMAP_A0001_ID));
-    imageBG.setWidth(800);
-    imageBG.setHeight(480);
+    imageBG.setPosition(0, 0, 800, 480);
     imageBG.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    imageBG.setVisible(false);
     add(imageBG);
+
+    video1.setPosition(0, 0, 800, 480);
+    video1.setVideoData(video_output_bin_start, video_output_bin_length);
+    video1.setRepeat(true);
+    video1.play();
+    add(video1);
 
     gaugeLeft.setBackground(touchgfx::Bitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_SMALL_BACKGROUNDS_LIGHT_PRECISION_ID));
     gaugeLeft.setPosition(34, 163, 236, 236);

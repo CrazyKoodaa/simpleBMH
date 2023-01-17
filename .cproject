@@ -152,6 +152,7 @@
                   <listOptionValue builtIn="false" value=":libtouchgfx-float-abi-hard.a"/>
                 </option>
                 <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.additionalobjs.2351270860" name="Additional object files" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.additionalobjs" useByScannerDiscovery="false" valueType="userObjs">
+                  <listOptionValue builtIn="false" value="../TouchGFX/generated/videos/obj/output.bin.o"/>
                   <listOptionValue builtIn="false" value="../TouchGFX/generated/videos/obj/test01.bin.o"/>
                   <listOptionValue builtIn="false" value="../TouchGFX/generated/videos/obj/test02.bin.o"/>
                   <listOptionValue builtIn="false" value="../TouchGFX/generated/videos/obj/test30.bin.o"/>
@@ -324,6 +325,7 @@
                   <listOptionValue builtIn="false" value=":libtouchgfx-float-abi-hard.a"/>
                 </option>
                 <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.additionalobjs.3723080368" name="Additional object files" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.additionalobjs" useByScannerDiscovery="false" valueType="userObjs">
+                  <listOptionValue builtIn="false" value="../TouchGFX/generated/videos/obj/output.bin.o"/>
                   <listOptionValue builtIn="false" value="../TouchGFX/generated/videos/obj/test01.bin.o"/>
                   <listOptionValue builtIn="false" value="../TouchGFX/generated/videos/obj/test02.bin.o"/>
                   <listOptionValue builtIn="false" value="../TouchGFX/generated/videos/obj/test30.bin.o"/>

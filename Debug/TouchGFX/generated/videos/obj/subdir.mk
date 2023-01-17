@@ -5,6 +5,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 O_SRCS += \
+../TouchGFX/generated/videos/obj/output.bin.o \
 ../TouchGFX/generated/videos/obj/test01.bin.o \
 ../TouchGFX/generated/videos/obj/test02.bin.o \
 ../TouchGFX/generated/videos/obj/test30.bin.o 

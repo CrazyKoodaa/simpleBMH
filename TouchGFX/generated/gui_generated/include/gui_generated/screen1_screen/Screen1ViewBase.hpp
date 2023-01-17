@@ -9,6 +9,7 @@
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
+#include <touchgfx/widgets/VideoWidget.hpp>
 #include <touchgfx/widgets/Gauge.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
@@ -30,6 +31,7 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::ScalableImage imageBG;
+    touchgfx::VideoWidget video1;
     touchgfx::Gauge gaugeLeft;
     touchgfx::Gauge gaugeMid;
     touchgfx::Gauge gaugeRight;
