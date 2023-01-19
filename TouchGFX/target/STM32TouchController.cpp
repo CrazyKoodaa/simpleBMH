@@ -51,6 +51,7 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
      * By default sampleTouch is called every tick, this can be adjusted by HAL::setTouchSampleRate(int8_t);
      *
      */
+
     if (bsp_ts_initialized)
     {
         TS_StateTypeDef state;

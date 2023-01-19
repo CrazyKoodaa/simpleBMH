@@ -1,0 +1,9 @@
+../Core/Src/i2c.c:15:6:goToFileI2C	8	static
+../Core/Src/i2c.c:32:9:temperature_Init	32	static
+../Core/Src/i2c.c:72:6:i2cStartAllocateMemory	16	static
+../Core/Src/i2c.c:81:9:getInformation	24	static
+../Core/Src/i2c.c:96:9:i2c_WriteTempRegister	32	static
+../Core/Src/i2c.c:116:9:i2c_WriteTempRegister2	32	static
+../Core/Src/i2c.c:136:9:i2c_WriteTempCmd	32	static
+../Core/Src/i2c.c:156:9:i2c_ReadTemperaturDMA	40	static
+../Core/Src/i2c.c:179:6:i2c_ReadTemperaturDMA_Complete	16	static

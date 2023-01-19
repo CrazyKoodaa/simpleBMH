@@ -31,6 +31,7 @@
 #include "stm32469i_discovery_qspi.h"
 
 #include "utils.h"
+#include "i2c.h"
 #include "taskSensor.h"
 /* USER CODE END Includes */
 
@@ -87,7 +88,7 @@ osThreadId_t myTaskTankHandle;
 const osThreadAttr_t myTaskTank_attributes = {
   .name = "myTaskTank",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityBelowNormal,
 };
 /* Definitions for TouchGFXTask */
 osThreadId_t TouchGFXTaskHandle;
@@ -96,33 +97,12 @@ const osThreadAttr_t TouchGFXTask_attributes = {
   .stack_size = 4096 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for myTaskFC */
-osThreadId_t myTaskFCHandle;
-const osThreadAttr_t myTaskFC_attributes = {
-  .name = "myTaskFC",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityAboveNormal,
-};
-/* Definitions for myTaskSensor */
-osThreadId_t myTaskSensorHandle;
-const osThreadAttr_t myTaskSensor_attributes = {
-  .name = "myTaskSensor",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityLow,
-};
-/* Definitions for myTaskSwitches */
-osThreadId_t myTaskSwitchesHandle;
-const osThreadAttr_t myTaskSwitches_attributes = {
-  .name = "myTaskSwitches",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityLow,
-};
 /* Definitions for myTaskI2C */
 osThreadId_t myTaskI2CHandle;
 const osThreadAttr_t myTaskI2C_attributes = {
   .name = "myTaskI2C",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityLow,
+  .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for myBinarySemI2C */
 osSemaphoreId_t myBinarySemI2CHandle;
@@ -157,13 +137,11 @@ static void MX_TIM2_Init(void);
 static void MX_USART3_UART_Init(void);
 void StartTaskTank(void *argument);
 extern void TouchGFX_Task(void *argument);
-void StartTaskFC(void *argument);
-//void StartTaskSensor(void *argument);
-void StartTaskSwitches(void *argument);
 void StartTaskI2C(void *argument);
 
 /* USER CODE BEGIN PFP */
-
+extern void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c);
+extern void HAL_I2C_MemTxCpltCallback(I2C_HandleTypeDef *hi2c);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -254,15 +232,6 @@ int main(void)
 
   /* creation of TouchGFXTask */
   TouchGFXTaskHandle = osThreadNew(TouchGFX_Task, NULL, &TouchGFXTask_attributes);
-
-  /* creation of myTaskFC */
-  myTaskFCHandle = osThreadNew(StartTaskFC, NULL, &myTaskFC_attributes);
-
-  /* creation of myTaskSensor */
-  myTaskSensorHandle = osThreadNew(StartTaskSensor, NULL, &myTaskSensor_attributes);
-
-  /* creation of myTaskSwitches */
-  myTaskSwitchesHandle = osThreadNew(StartTaskSwitches, NULL, &myTaskSwitches_attributes);
 
   /* creation of myTaskI2C */
   myTaskI2CHandle = osThreadNew(StartTaskI2C, NULL, &myTaskI2C_attributes);
@@ -704,7 +673,7 @@ static void MX_I2C1_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN I2C1_Init 2 */
-  HAL_I2C_DeInit(&hi2c1);
+//  HAL_I2C_DeInit(&hi2c1);
   /* USER CODE END I2C1_Init 2 */
 
 }
@@ -957,10 +926,10 @@ static void MX_DMA_Init(void)
 
   /* DMA interrupt init */
   /* DMA1_Stream0_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 5, 0);
+  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
   /* DMA1_Stream6_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 5, 0);
+  HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);
   /* DMA2_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 5, 0);
@@ -1176,60 +1145,6 @@ void StartTaskTank(void *argument)
   /* USER CODE END 5 */
 }
 
-/* USER CODE BEGIN Header_StartTaskFC */
-/**
-* @brief Function implementing the myTaskFC thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartTaskFC */
-void StartTaskFC(void *argument)
-{
-  /* USER CODE BEGIN StartTaskFC */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END StartTaskFC */
-}
-
-///* USER CODE BEGIN Header_StartTaskSensor */
-///**
-//* @brief Function implementing the myTaskSensor thread.
-//* @param argument: Not used
-//* @retval None
-//*/
-///* USER CODE END Header_StartTaskSensor */
-//void StartTaskSensor(void *argument)
-//{
-//  /* USER CODE BEGIN StartTaskSensor */
-//  /* Infinite loop */
-//  for(;;)
-//  {
-//    osDelay(1);
-//  }
-//  /* USER CODE END StartTaskSensor */
-//}
-
-/* USER CODE BEGIN Header_StartTaskSwitches */
-/**
-* @brief Function implementing the myTaskSwitches thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartTaskSwitches */
-void StartTaskSwitches(void *argument)
-{
-  /* USER CODE BEGIN StartTaskSwitches */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END StartTaskSwitches */
-}
-
 /* USER CODE BEGIN Header_StartTaskI2C */
 /**
 * @brief Function implementing the myTaskI2C thread.
@@ -1240,6 +1155,7 @@ void StartTaskSwitches(void *argument)
 void StartTaskI2C(void *argument)
 {
   /* USER CODE BEGIN StartTaskI2C */
+	goToFileI2C();
   /* Infinite loop */
   for(;;)
   {

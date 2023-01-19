@@ -72,7 +72,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  c:\shared\projekte\programmieren\!github\stm_touchprojects\tests\simplebmh\drivers\bsp\components\n25q128a\n25q128a.h \
  ../Core/Inc/utils.h ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- ../Core/Inc/taskSensor.h
+ ../Core/Inc/i2c.h ../Core/Inc/i2c.h ../Core/Inc/taskSensor.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -154,4 +154,6 @@ c:\shared\projekte\programmieren\!github\stm_touchprojects\tests\simplebmh\drive
 ../Core/Inc/utils.h:
 ../Core/Inc/main.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
+../Core/Inc/i2c.h:
+../Core/Inc/i2c.h:
 ../Core/Inc/taskSensor.h:

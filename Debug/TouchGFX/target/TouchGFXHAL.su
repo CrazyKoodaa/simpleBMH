@@ -20,6 +20,7 @@
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:670:18:virtual bool touchgfx::HAL::sampleKey(uint8_t&)	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:720:18:virtual void touchgfx::HAL::setFrameBufferStartAddresses(void*, void*, void*)	24	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:737:18:virtual void touchgfx::HAL::setAnimationStorage(void*)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:762:10:void touchgfx::HAL::setTouchSampleRate(int8_t)	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:802:10:void touchgfx::HAL::setMCUInstrumentation(touchgfx::MCUInstrumentation*)	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:813:10:void touchgfx::HAL::enableMCULoadCalculation(bool)	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:833:10:void touchgfx::HAL::setButtonController(touchgfx::ButtonController*)	16	static

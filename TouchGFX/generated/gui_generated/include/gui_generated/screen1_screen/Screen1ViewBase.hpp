@@ -9,10 +9,10 @@
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
-#include <touchgfx/widgets/VideoWidget.hpp>
 #include <touchgfx/widgets/Gauge.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/containers/buttons/Buttons.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -31,7 +31,6 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::ScalableImage imageBG;
-    touchgfx::VideoWidget video1;
     touchgfx::Gauge gaugeLeft;
     touchgfx::Gauge gaugeMid;
     touchgfx::Gauge gaugeRight;
@@ -45,6 +44,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard textAreaLeftValue;
     touchgfx::TextAreaWithOneWildcard textAreaMiddleValue;
     touchgfx::TextAreaWithOneWildcard textAreaRightValue;
+    touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  flexButton1;
 
     /*
      * Wildcard Buffers
@@ -68,11 +68,13 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractProgressIndicator&> gaugeValueSetCallback;
+    touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
 
     /*
      * Callback Handler Declarations
      */
     void gaugeValueSetCallbackHandler(const touchgfx::AbstractProgressIndicator& src);
+    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
 };
 

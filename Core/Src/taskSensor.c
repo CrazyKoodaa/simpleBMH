@@ -14,13 +14,13 @@
 * @retval None
 */
 /* USER CODE END Header_StartTaskSensor */
-void StartTaskSensor(void *argument)
-{
-  /* USER CODE BEGIN StartTaskSensor */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END StartTaskSensor */
-}
+//void StartTaskSensor(void *argument)
+//{
+//  /* USER CODE BEGIN StartTaskSensor */
+//  /* Infinite loop */
+//  for(;;)
+//  {
+//    osDelay(1);
+//  }
+//  /* USER CODE END StartTaskSensor */
+//}

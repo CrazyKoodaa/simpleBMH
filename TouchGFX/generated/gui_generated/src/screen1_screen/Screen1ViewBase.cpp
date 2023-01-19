@@ -4,11 +4,11 @@
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
-#include <videos/VideoDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
 Screen1ViewBase::Screen1ViewBase() :
-    gaugeValueSetCallback(this, &Screen1ViewBase::gaugeValueSetCallbackHandler)
+    gaugeValueSetCallback(this, &Screen1ViewBase::gaugeValueSetCallbackHandler),
+    flexButtonCallback(this, &Screen1ViewBase::flexButtonCallbackHandler)
 {
     __background.setPosition(0, 0, 800, 480);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -17,14 +17,7 @@ Screen1ViewBase::Screen1ViewBase() :
     imageBG.setBitmap(touchgfx::Bitmap(BITMAP_A0001_ID));
     imageBG.setPosition(0, 0, 800, 480);
     imageBG.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-    imageBG.setVisible(false);
     add(imageBG);
-
-    video1.setPosition(0, 0, 800, 480);
-    video1.setVideoData(video_output_bin_start, video_output_bin_length);
-    video1.setRepeat(true);
-    video1.play();
-    add(video1);
 
     gaugeLeft.setBackground(touchgfx::Bitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_SMALL_BACKGROUNDS_LIGHT_PRECISION_ID));
     gaugeLeft.setPosition(34, 163, 236, 236);
@@ -134,6 +127,11 @@ Screen1ViewBase::Screen1ViewBase() :
     textAreaRightValue.resizeToCurrentText();
     textAreaRightValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RFTF));
     add(textAreaRightValue);
+
+    flexButton1.setBitmapXY(0, 0);
+    flexButton1.setAction(flexButtonCallback);
+    flexButton1.setPosition(112, 13, 80, 80);
+    add(flexButton1);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -158,5 +156,16 @@ void Screen1ViewBase::gaugeValueSetCallbackHandler(const touchgfx::AbstractProgr
         textAreaLeftValue.invalidate();
         textAreaLeftValue.resizeToCurrentText();
         textAreaLeftValue.invalidate();
+    }
+}
+
+void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
+{
+    if (&src == &flexButton1)
+    {
+        //InteractionToScreen2
+        //When flexButton1 clicked change screen to Screen2
+        //Go to Screen2 with screen transition towards North
+        application().gotoScreen2ScreenSlideTransitionNorth();
     }
 }

@@ -5,19 +5,31 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_normal.cpp \
+../TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_pressed.cpp \
 ../TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_backgrounds_light_precision.cpp \
 ../TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_fillers_swoop.cpp \
-../TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_needles_rough.cpp 
+../TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_needles_rough.cpp \
+../TouchGFX/generated/images/src/__generated/image_icon_theme_images_action_done_50_50_E8F6FB.svg.cpp \
+../TouchGFX/generated/images/src/__generated/image_icon_theme_images_navigation_arrow_back_50_50_E8F6FB.svg.cpp 
 
 OBJS += \
+./TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_normal.o \
+./TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_pressed.o \
 ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_backgrounds_light_precision.o \
 ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_fillers_swoop.o \
-./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_needles_rough.o 
+./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_needles_rough.o \
+./TouchGFX/generated/images/src/__generated/image_icon_theme_images_action_done_50_50_E8F6FB.svg.o \
+./TouchGFX/generated/images/src/__generated/image_icon_theme_images_navigation_arrow_back_50_50_E8F6FB.svg.o 
 
 CPP_DEPS += \
+./TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_normal.d \
+./TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_pressed.d \
 ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_backgrounds_light_precision.d \
 ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_fillers_swoop.d \
-./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_needles_rough.d 
+./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_needles_rough.d \
+./TouchGFX/generated/images/src/__generated/image_icon_theme_images_action_done_50_50_E8F6FB.svg.d \
+./TouchGFX/generated/images/src/__generated/image_icon_theme_images_navigation_arrow_back_50_50_E8F6FB.svg.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -27,7 +39,7 @@ TouchGFX/generated/images/src/__generated/%.o TouchGFX/generated/images/src/__ge
 clean: clean-TouchGFX-2f-generated-2f-images-2f-src-2f-__generated
 
 clean-TouchGFX-2f-generated-2f-images-2f-src-2f-__generated:
-	-$(RM) ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_backgrounds_light_precision.d ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_backgrounds_light_precision.o ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_backgrounds_light_precision.su ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_fillers_swoop.d ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_fillers_swoop.o ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_fillers_swoop.su ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_needles_rough.d ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_needles_rough.o ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_needles_rough.su
+	-$(RM) ./TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_normal.d ./TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_normal.o ./TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_normal.su ./TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_pressed.d ./TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_pressed.o ./TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_pressed.su ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_backgrounds_light_precision.d ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_backgrounds_light_precision.o ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_backgrounds_light_precision.su ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_fillers_swoop.d ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_fillers_swoop.o ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_fillers_swoop.su ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_needles_rough.d ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_needles_rough.o ./TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_needles_rough.su ./TouchGFX/generated/images/src/__generated/image_icon_theme_images_action_done_50_50_E8F6FB.svg.d ./TouchGFX/generated/images/src/__generated/image_icon_theme_images_action_done_50_50_E8F6FB.svg.o ./TouchGFX/generated/images/src/__generated/image_icon_theme_images_action_done_50_50_E8F6FB.svg.su ./TouchGFX/generated/images/src/__generated/image_icon_theme_images_navigation_arrow_back_50_50_E8F6FB.svg.d ./TouchGFX/generated/images/src/__generated/image_icon_theme_images_navigation_arrow_back_50_50_E8F6FB.svg.o ./TouchGFX/generated/images/src/__generated/image_icon_theme_images_navigation_arrow_back_50_50_E8F6FB.svg.su
 
 .PHONY: clean-TouchGFX-2f-generated-2f-images-2f-src-2f-__generated
 

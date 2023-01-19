@@ -46,10 +46,6 @@
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	24	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::~Widget()	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:virtual touchgfx::Widget::~Widget()	16	static
-../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/VideoController.hpp:100:13:touchgfx::VideoController::~VideoController()	16	static
-../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/VideoController.hpp:100:13:virtual touchgfx::VideoController::~VideoController()	16	static
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/VideoWidget.hpp:159:10:void touchgfx::VideoWidget::setVideoBuffer(uint8_t*)	16	static
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/VideoWidget.hpp:172:10:void touchgfx::VideoWidget::setVideoBufferFormat(touchgfx::Bitmap::BitmapFormat, int16_t, int16_t)	24	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp:44:5:touchgfx::AbstractPainter::AbstractPainter()	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp:50:13:touchgfx::AbstractPainter::~AbstractPainter()	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp:50:13:virtual touchgfx::AbstractPainter::~AbstractPainter()	16	static
@@ -84,6 +80,10 @@
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:321:44:virtual touchgfx::AbstractPainterLinearGradient& touchgfx::CWRVectorRendererRGB565::getLinearPainter()	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:326:35:virtual touchgfx::AbstractPainterColor& touchgfx::CWRVectorRendererRGB565::getColorPainterColor()	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:331:30:virtual touchgfx::AbstractPainter& touchgfx::CWRVectorRendererRGB565::getColorPainter()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/VideoController.hpp:100:13:touchgfx::VideoController::~VideoController()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/VideoController.hpp:100:13:virtual touchgfx::VideoController::~VideoController()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/VideoWidget.hpp:159:10:void touchgfx::VideoWidget::setVideoBuffer(uint8_t*)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/VideoWidget.hpp:172:10:void touchgfx::VideoWidget::setVideoBufferFormat(touchgfx::Bitmap::BitmapFormat, int16_t, int16_t)	24	static
 ../TouchGFX/target/generated/MJPEGDecoder.hpp:27:13:MJPEGDecoder::~MJPEGDecoder()	16	static
 ../TouchGFX/target/generated/MJPEGDecoder.hpp:27:13:virtual MJPEGDecoder::~MJPEGDecoder()	16	static
 ../TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:35:18:static touchgfx::VideoController& touchgfx::VideoController::getInstance()	4	static

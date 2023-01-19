@@ -45,7 +45,8 @@ Core/Src/utils.o: ../Core/Src/utils.c ../Core/Inc/utils.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
+ ../Core/Inc/i2c.h
 ../Core/Inc/utils.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -95,3 +96,4 @@ Core/Src/utils.o: ../Core/Src/utils.c ../Core/Inc/utils.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
+../Core/Inc/i2c.h:

@@ -69,6 +69,7 @@ void touchgfx_taskEntry()
      *
      * Note This function never returns
      */
+
     hal.taskEntry();
 }
 

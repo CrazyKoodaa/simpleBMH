@@ -9,18 +9,8 @@
             "Name": "imageBG",
             "Width": 800,
             "Height": 480,
-            "Visible": false,
             "Filename": "A0001.png",
             "ScalingAlgorithm": "Nearest-neighbor"
-          },
-          {
-            "Type": "Video",
-            "Name": "video1",
-            "Width": 800,
-            "Height": 480,
-            "VideoFileName": "output.avi",
-            "AutoPlay": true,
-            "Loop": true
           },
           {
             "Type": "Gauge",
@@ -179,7 +169,7 @@
             "Name": "textAreaMiddle",
             "X": 377,
             "Y": 119,
-            "Width": 47,
+            "Width": 46,
             "Height": 25,
             "TextId": "__SingleUse_2CU8",
             "TextRotation": "0",
@@ -269,7 +259,7 @@
             "Name": "textAreaRightValue",
             "X": 609,
             "Y": 299,
-            "Width": 77,
+            "Width": 76,
             "Height": 25,
             "TextId": "__SingleUse_RFTF",
             "TextRotation": "0",
@@ -284,6 +274,22 @@
               "UseBuffer": true,
               "BufferSize": 10
             }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "flexButton1",
+            "X": 112,
+            "Y": 13,
+            "Width": 80,
+            "Height": 80,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "ImageButtonStyle"
+              }
+            ]
           }
         ],
         "Interactions": [
@@ -299,8 +305,173 @@
               "WildcardLocation": "Wildcard1",
               "ActionComponent": "textAreaLeftValue"
             }
+          },
+          {
+            "InteractionName": "InteractionToScreen2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButton1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "North",
+              "ActionComponent": "Screen2"
+            }
           }
         ]
+      },
+      {
+        "Name": "Screen2",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "Width": 800,
+            "Height": 480,
+            "Filename": "skizze-bg.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "ButtonUhrzeit",
+            "X": 54,
+            "Y": 107,
+            "Width": 205,
+            "Height": 53,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 13,
+                "TextId": "__SingleUse_3TVX",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 205,
+                "Height": 53,
+                "LockToFlexButtonSize": true,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonBack",
+            "X": 104,
+            "Y": 233,
+            "Width": 100,
+            "Height": 100,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_small_fill_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_small_fill_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_navigation_arrow_back_50_50_E8F6FB.svg.png",
+            "IconX": 25,
+            "IconY": 25,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\small_fill_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 266,
+            "Y": 29,
+            "Width": 269,
+            "Height": 49,
+            "TextId": "__SingleUse_CLNF",
+            "TextRotation": "0",
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionToScreen1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonBack"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "South",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "InteractionToScree3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ButtonUhrzeit"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Screen3"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen3",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "Width": 800,
+            "Height": 480,
+            "Filename": "skizze-bg.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1",
+            "X": 599,
+            "Y": 231,
+            "Width": 100,
+            "Height": 100,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_small_fill_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_small_fill_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconX": 25,
+            "IconY": 25,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\small_fill_normal.json"
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [],

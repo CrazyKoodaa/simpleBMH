@@ -90,7 +90,7 @@ void TouchGFXHAL::initialize()
     // Please note, HAL::initialize() must be called to initialize the framework.
 
     TouchGFXGeneratedHAL::initialize();
-
+    HAL::setTouchSampleRate(10000);
     lockDMAToFrontPorch(false);
 
     mcuInstr.init();
