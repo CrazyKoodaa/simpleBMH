@@ -3,11 +3,21 @@
 ../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:52:13:touchgfx::Presenter::~Presenter()	16	static
 ../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:52:13:virtual touchgfx::Presenter::~Presenter()	16	static
 ../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:58:5:touchgfx::Presenter::Presenter()	16	static
+../TouchGFX/gui/include/gui/model/Model.hpp:20:10:void Model::setTrainerTemperatur(int)	16	static
+../TouchGFX/gui/include/gui/model/Model.hpp:21:9:int Model::getTrainerTemperatur()	16	static
+../TouchGFX/gui/include/gui/model/Model.hpp:23:10:void Model::setPreassure01(int)	16	static
+../TouchGFX/gui/include/gui/model/Model.hpp:24:9:int Model::getPreassure01()	16	static
 ../TouchGFX/gui/include/gui/model/ModelListener.hpp:9:5:ModelListener::ModelListener()	16	static
 ../TouchGFX/gui/include/gui/model/ModelListener.hpp:11:13:ModelListener::~ModelListener()	16	static
 ../TouchGFX/gui/include/gui/model/ModelListener.hpp:11:13:virtual ModelListener::~ModelListener()	16	static
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:18:18:virtual void ModelListener::trainerTemperaturChanged()	16	static
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:19:18:virtual void ModelListener::preassure01Changed()	16	static
 ../TouchGFX/gui/include/gui/screen1_screen/Screen1Presenter.hpp:28:13:Screen1Presenter::~Screen1Presenter()	16	static
 ../TouchGFX/gui/include/gui/screen1_screen/Screen1Presenter.hpp:28:13:virtual Screen1Presenter::~Screen1Presenter()	16	static
 ../TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:4:1:Screen1Presenter::Screen1Presenter(Screen1View&)	16	static
-../TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:10:6:virtual void Screen1Presenter::activate()	16	static
-../TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:15:6:virtual void Screen1Presenter::deactivate()	16	static
+../TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:10:6:virtual void Screen1Presenter::activate()	24	static
+../TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:16:6:virtual void Screen1Presenter::deactivate()	16	static
+../TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:22:6:void Screen1Presenter::viewSetTrainerTemperature(int)	16	static
+../TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:28:6:virtual void Screen1Presenter::trainerTemperaturChanged()	24	static
+../TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:33:6:void Screen1Presenter::viewSetPreassure01(int)	16	static
+../TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:39:6:virtual void Screen1Presenter::preassure01Changed()	24	static

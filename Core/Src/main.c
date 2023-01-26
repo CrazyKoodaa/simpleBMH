@@ -66,8 +66,6 @@ DMA2D_HandleTypeDef hdma2d;
 DSI_HandleTypeDef hdsi;
 
 I2C_HandleTypeDef hi2c1;
-DMA_HandleTypeDef hdma_i2c1_rx;
-DMA_HandleTypeDef hdma_i2c1_tx;
 
 LTDC_HandleTypeDef hltdc;
 
@@ -87,7 +85,7 @@ SDRAM_HandleTypeDef hsdram1;
 osThreadId_t myTaskTankHandle;
 const osThreadAttr_t myTaskTank_attributes = {
   .name = "myTaskTank",
-  .stack_size = 128 * 4,
+  .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityBelowNormal,
 };
 /* Definitions for TouchGFXTask */
@@ -101,8 +99,18 @@ const osThreadAttr_t TouchGFXTask_attributes = {
 osThreadId_t myTaskI2CHandle;
 const osThreadAttr_t myTaskI2C_attributes = {
   .name = "myTaskI2C",
-  .stack_size = 128 * 4,
+  .stack_size = 1024 * 4,
   .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for myQueue1Left */
+osMessageQueueId_t myQueue1LeftHandle;
+const osMessageQueueAttr_t myQueue1Left_attributes = {
+  .name = "myQueue1Left"
+};
+/* Definitions for myQueue1Middle */
+osMessageQueueId_t myQueue1MiddleHandle;
+const osMessageQueueAttr_t myQueue1Middle_attributes = {
+  .name = "myQueue1Middle"
 };
 /* Definitions for myBinarySemI2C */
 osSemaphoreId_t myBinarySemI2CHandle;
@@ -115,7 +123,7 @@ const osSemaphoreAttr_t myBinarySemUART_attributes = {
   .name = "myBinarySemUART"
 };
 /* USER CODE BEGIN PV */
-
+osStatus_t r_state;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -221,6 +229,13 @@ int main(void)
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
+
+  /* Create the queue(s) */
+  /* creation of myQueue1Left */
+  myQueue1LeftHandle = osMessageQueueNew (16, sizeof(uint16_t), &myQueue1Left_attributes);
+
+  /* creation of myQueue1Middle */
+  myQueue1MiddleHandle = osMessageQueueNew (16, sizeof(uint16_t), &myQueue1Middle_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -921,16 +936,9 @@ static void MX_DMA_Init(void)
 {
 
   /* DMA controller clock enable */
-  __HAL_RCC_DMA1_CLK_ENABLE();
   __HAL_RCC_DMA2_CLK_ENABLE();
 
   /* DMA interrupt init */
-  /* DMA1_Stream0_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 1, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
-  /* DMA1_Stream6_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 1, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);
   /* DMA2_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);

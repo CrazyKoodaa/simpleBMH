@@ -20,6 +20,15 @@ public:
     Screen1ViewBase();
     virtual ~Screen1ViewBase();
     virtual void setupScreen();
+    virtual void handleTickEvent();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void updateGauges()
+    {
+        // Override and implement this function in Screen1
+    }
 
 protected:
     FrontendApplication& application() {
@@ -67,14 +76,18 @@ private:
     /*
      * Callback Declarations
      */
-    touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractProgressIndicator&> gaugeValueSetCallback;
     touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
 
     /*
      * Callback Handler Declarations
      */
-    void gaugeValueSetCallbackHandler(const touchgfx::AbstractProgressIndicator& src);
     void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
+
+    /*
+     * Tick Counter Declarations
+     */
+    static const uint32_t TICK_INTERACTION1_INTERVAL = 10;
+    uint32_t frameCountInteraction1Interval;
 
 };
 

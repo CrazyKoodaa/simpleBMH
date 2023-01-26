@@ -294,19 +294,6 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "InteractionLeft",
-            "Trigger": {
-              "Type": "TriggerGaugeValueSet",
-              "TriggerComponent": "gaugeLeft"
-            },
-            "Action": {
-              "Type": "ActionSetWildcard",
-              "TextId": "__SingleUse_68WD",
-              "WildcardLocation": "Wildcard1",
-              "ActionComponent": "textAreaLeftValue"
-            }
-          },
-          {
             "InteractionName": "InteractionToScreen2",
             "Trigger": {
               "Type": "TriggerClicked",
@@ -317,6 +304,17 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "North",
               "ActionComponent": "Screen2"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 10
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "updateGauges"
             }
           }
         ]

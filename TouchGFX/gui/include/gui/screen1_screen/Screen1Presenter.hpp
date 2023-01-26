@@ -27,6 +27,14 @@ public:
 
     virtual ~Screen1Presenter() {};
 
+    //from model
+    virtual void trainerTemperaturChanged();
+    virtual void preassure01Changed();
+
+    //from view
+    void viewSetTrainerTemperature(int temp);
+    void viewSetPreassure01(int temp);
+
 private:
     Screen1Presenter();
 

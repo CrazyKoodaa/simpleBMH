@@ -12,9 +12,6 @@
       <Text Id="__SingleUse_3TVX" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Uhrzeit</Translation>
       </Text>
-      <Text Id="__SingleUse_68WD" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">New Text</Translation>
-      </Text>
       <Text Id="__SingleUse_RFTF" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt; km</Translation>
       </Text>

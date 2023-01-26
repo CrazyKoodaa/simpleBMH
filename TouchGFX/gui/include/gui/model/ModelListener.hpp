@@ -14,6 +14,9 @@ public:
     {
         model = m;
     }
+
+    virtual void trainerTemperaturChanged() {};
+    virtual void preassure01Changed() {};
 protected:
     Model* model;
 };

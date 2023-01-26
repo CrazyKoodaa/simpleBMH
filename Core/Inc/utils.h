@@ -41,6 +41,7 @@ typedef enum
 
 extern osSemaphoreId_t myBinarySemUARTHandle;
 extern osSemaphoreId_t myBinarySemI2CHandle;
+extern UART_HandleTypeDef huart3;
 extern i2cStart *currentI2cDevice;
 
 
@@ -50,7 +51,7 @@ extern uint8_t aTxBuffer[250];// = {0};
 
 
 double getI2CData(i2cDevice device);
-void myDebug(uint8_t * message, logLevel status);
+void myDebug(uint8_t * message, uint16_t number, logLevel status);
 void strrev(char *arr, int start, int end);
 char *itoa(int number, char *arr, int base);
 void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c);

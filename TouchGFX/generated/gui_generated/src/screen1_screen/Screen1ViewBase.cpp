@@ -7,8 +7,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 Screen1ViewBase::Screen1ViewBase() :
-    gaugeValueSetCallback(this, &Screen1ViewBase::gaugeValueSetCallbackHandler),
-    flexButtonCallback(this, &Screen1ViewBase::flexButtonCallbackHandler)
+    flexButtonCallback(this, &Screen1ViewBase::flexButtonCallbackHandler),
+    frameCountInteraction1Interval(0)
 {
     __background.setPosition(0, 0, 800, 480);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -28,7 +28,6 @@ Screen1ViewBase::Screen1ViewBase() :
     gaugeLeft.setNeedle(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_SMALL_NEEDLES_ROUGH_ID, 8, 53);
     gaugeLeft.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
     gaugeLeft.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
-    gaugeLeft.setValueSetAction(gaugeValueSetCallback);
     add(gaugeLeft);
 
     gaugeMid.setBackground(touchgfx::Bitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_SMALL_BACKGROUNDS_LIGHT_PRECISION_ID));
@@ -144,21 +143,6 @@ void Screen1ViewBase::setupScreen()
 
 }
 
-void Screen1ViewBase::gaugeValueSetCallbackHandler(const touchgfx::AbstractProgressIndicator& src)
-{
-    if (&src == &gaugeLeft)
-    {
-        //InteractionLeft
-        //When gaugeLeft gauge value set set wildcard textAreaLeftValue
-        //Set textAreaLeftValue wildcard to __SingleUse_68WD
-        Unicode::snprintf(textAreaLeftValueBuffer, TEXTAREALEFTVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_68WD).getText());
-        textAreaLeftValue.setWildcard(textAreaLeftValueBuffer);
-        textAreaLeftValue.invalidate();
-        textAreaLeftValue.resizeToCurrentText();
-        textAreaLeftValue.invalidate();
-    }
-}
-
 void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
 {
     if (&src == &flexButton1)
@@ -167,5 +151,18 @@ void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonCo
         //When flexButton1 clicked change screen to Screen2
         //Go to Screen2 with screen transition towards North
         application().gotoScreen2ScreenSlideTransitionNorth();
+    }
+}
+
+void Screen1ViewBase::handleTickEvent()
+{
+    frameCountInteraction1Interval++;
+    if(frameCountInteraction1Interval == TICK_INTERACTION1_INTERVAL)
+    {
+        //Interaction1
+        //When every N tick call virtual function
+        //Call updateGauges
+        updateGauges();
+        frameCountInteraction1Interval = 0;
     }
 }

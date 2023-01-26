@@ -29,6 +29,14 @@
 
 #define TEMPERATURE01_CMD_READ_COUNTER			0xA8
 #define TEMPERATURE01_CMD_READ_SLOPE			0xA9
+
+// Values for the Pressure Device DRMOD-I2C
+#define PRESSURE01_I2C_ADDRESS					0xF0	// 8bit Version. 7bit Version = 0x78
+#define PRESSURE01_CMD_START					0x02
+#define PRESSURE01_CMD_READ_VALUE				0x78
+
+
+
 /* Private includes ----------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_hal_i2c.h"
@@ -56,38 +64,44 @@ typedef struct {
 
 	uint8_t irq;
 	uint8_t readingTemp;
+	uint16_t tempResult;
 
 	/* result */
 	uint16_t result;
 
 } i2cStart;
 
+
+
 /* Private variables ---------------------------------------------------------*/
 extern osSemaphoreId_t myBinarySemI2CHandle;
 extern I2C_HandleTypeDef hi2c1;
+extern osMessageQueueId_t myQueue1LeftHandle;
+extern osMessageQueueId_t myQueue1MiddleHandle;
 
 
 extern i2cStart *currentI2cDevice;
 extern i2cStart TrainerTemperature01;
 
-
-
 /* Private function prototypes -----------------------------------------------*/
 void goToFileI2C(void);
 
 /* INITIALISATION */
-uint8_t temperature_Init(I2C_HandleTypeDef *i2cHandle, i2cStart *i2cDevice, uint8_t i2cAddress, uint8_t id);
-void i2cStartAllocateMemory(i2cStart *i2cDevice);
+uint8_t I2CInit(I2C_HandleTypeDef *i2cHandle, i2cStart *i2cDevice, uint8_t i2cAddress, uint8_t id);
+uint8_t i2c_ReadTemperatur(i2cStart *i2cDevice);
+uint8_t i2c_ReadPressure(i2cStart *i2cDevice);
+void i2c_ReadTemperatur_Complete(i2cStart *i2cDevice);
+void i2c_ReadPreasure_Complete (i2cStart *i2cDevice);
 
-uint8_t getInformation(i2cStart *i2cDevice);
 
 /* LOW-LEVEL REGISTER FUNCTIONS */
 uint8_t i2c_WriteTempRegister(i2cStart *i2cDevice, uint8_t regAddr, uint8_t data0);
 uint8_t i2c_WriteTempRegister2(i2cStart *i2cDevice, uint8_t regAddr, uint8_t data0, uint8_t data1);
 uint8_t i2c_WriteTempCmd(i2cStart *i2cDevice, uint8_t cmd);
 
-/* DMA */
-uint8_t i2c_ReadTemperaturDMA(i2cStart *i2cDevice);
-void i2c_ReadTemperaturDMA_Complete(i2cStart *i2cDevice);
 
+
+
+//void i2cStartAllocateMemory(i2cStart *i2cDevice);
+//uint8_t getInformation(i2cStart *i2cDevice);
 #endif /* INC_I2C_H_ */

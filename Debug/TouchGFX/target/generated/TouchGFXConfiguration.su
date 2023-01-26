@@ -74,7 +74,7 @@
 ../Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp:39:7:virtual touchgfx::LCD16bpp::~LCD16bpp()	16	static
 ../TouchGFX/target/STM32TouchController.hpp:36:7:STM32TouchController::~STM32TouchController()	16	static
 ../TouchGFX/target/STM32TouchController.hpp:36:7:virtual STM32TouchController::~STM32TouchController()	16	static
-../TouchGFX/target/generated/TouchGFXConfiguration.cpp:74:1:void __static_initialization_and_destruction_0(int, int)	24	static
+../TouchGFX/target/generated/TouchGFXConfiguration.cpp:73:1:void __static_initialization_and_destruction_0(int, int)	24	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:424:8:touchgfx::Callback<FrontendApplicationBase>::~Callback()	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:424:8:virtual touchgfx::Callback<FrontendApplicationBase>::~Callback()	16	static
 ../Middlewares/ST/touchgfx/framework/include/common/Partition.hpp:58:22:uint16_t touchgfx::Partition<ListOfTypes, NUMBER_OF_ELEMENTS>::capacity() const [with ListOfTypes = touchgfx::meta::TypeList<touchgfx::SlideTransition<touchgfx::WEST>, touchgfx::meta::TypeList<touchgfx::meta::Nil, touchgfx::meta::Nil> >; short unsigned int NUMBER_OF_ELEMENTS = 1]	16	static
@@ -91,5 +91,5 @@
 ../Middlewares/ST/touchgfx/framework/include/common/Partition.hpp:74:25:const void* touchgfx::Partition<ListOfTypes, NUMBER_OF_ELEMENTS>::element(uint16_t) const [with ListOfTypes = touchgfx::meta::TypeList<Screen3Presenter, touchgfx::meta::TypeList<touchgfx::meta::Nil, touchgfx::meta::Nil> >; short unsigned int NUMBER_OF_ELEMENTS = 1]	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:449:18:void touchgfx::Callback<dest_type, void, void, void>::execute() [with dest_type = FrontendApplicationBase]	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:459:18:bool touchgfx::Callback<dest_type, void, void, void>::isValid() const [with dest_type = FrontendApplicationBase]	16	static
-../TouchGFX/target/generated/TouchGFXConfiguration.cpp:74:1:cpp)	8	static
-../TouchGFX/target/generated/TouchGFXConfiguration.cpp:74:1:cpp)	8	static
+../TouchGFX/target/generated/TouchGFXConfiguration.cpp:73:1:cpp)	8	static
+../TouchGFX/target/generated/TouchGFXConfiguration.cpp:73:1:cpp)	8	static

@@ -10,7 +10,7 @@
 //double getI2CData(i2cDevice device);
 //
 //
-void myDebug(uint8_t * message, logLevel status)
+void myDebug(uint8_t * message, uint16_t number, logLevel status)
 {
 	uint8_t aTxBuffer[250];
 
@@ -18,22 +18,33 @@ void myDebug(uint8_t * message, logLevel status)
 	{
 
 		HAL_Delay(500);
+		uint8_t length = 0;
 		switch (status)
 		{
 		case 0:
-			sprintf((char*)aTxBuffer, "INFO: **** %s ****\r\n ", message);
+			sprintf((char*)aTxBuffer, "INFO: **** %s %d ****\r\n ", message, number);
+
 			break;
 		case 1:
-			sprintf((char*)aTxBuffer, "WARNING: **************** %s ****\r\n ", message);
+			sprintf((char*)aTxBuffer, "WARNING: **************** %s %d ****\r\n ", message, number);
 			break;
 		case 2:
-			sprintf((char*)aTxBuffer, "ERROR: ********************************* %s ****\r\n ", message);
+			sprintf((char*)aTxBuffer, "ERROR: ********************************* %s %d ****\r\n ", message, number);
 			break;
 		default:
-			sprintf((char*)aTxBuffer, "INFO: **** %s ****\r\n ", message);
+			sprintf((char*)aTxBuffer, "INFO: **** %s %d ****\r\n ", message, number);
 			break;
 		}
-//		if(HAL_UART_Transmit(&huart3, (uint8_t*)aTxBuffer, TXBUFFERSIZE, 1000) != HAL_OK) Error_Handler();
+		for (int i = 0; i < sizeof(aTxBuffer); i++)
+		{
+			if (aTxBuffer[i] == '\0')
+			{
+				length = i - 1;
+				break;
+			}
+
+		}
+		if(HAL_UART_Transmit(&huart3, (uint8_t*)aTxBuffer, length, 1000) != HAL_OK) Error_Handler();
 	}
 
 	osSemaphoreRelease(myBinarySemUARTHandle);
